@@ -6,6 +6,8 @@ services:
       - 3307:3306
     environment:
       - MYSQL_ROOT_PASSWORD=mysqls3cret
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
   mysql-workbench:
     image: lscr.io/linuxserver/mysql-workbench:latest
     container_name: mysql-workbench
